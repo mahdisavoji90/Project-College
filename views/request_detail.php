@@ -75,7 +75,7 @@ $page = "requests";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>جزئیات درخواست - بازیافت نوین</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="<?= url('views/style.php') ?>">
 </head>
 <body>
 
@@ -130,7 +130,7 @@ $page = "requests";
                     <h1>📋 جزئیات درخواست</h1>
                     <p>کد پیگیری: <strong style="color: var(--primary-light);"><?= htmlspecialchars($request['tracking_code'] ?? '---') ?></strong></p>
                 </div>
-                <a href="requests.php" class="btn btn-outline" style="text-decoration: none;">⬅️ بازگشت به لیست</a>
+                <a href="<?= url('requests') ?>" class="btn btn-outline" style="text-decoration: none;">⬅️ بازگشت به لیست</a>
             </div>
 
             <!-- ====== کارت اطلاعات ====== -->
@@ -143,7 +143,20 @@ $page = "requests";
                             <div><strong>وزن:</strong> <?= number_format($request['weight']) ?> کیلوگرم</div>
                             <div><strong>قیمت هر کیلو:</strong> <?= number_format($request['price_per_kg'] ?? 0) ?> تومان</div>
                             <div><strong>قیمت تخمینی:</strong> <strong style="color: var(--success);"><?= number_format($estimated_price) ?> تومان</strong></div>
-                            <div><strong>وضعیت:</strong> <?= $status_badges[$request['status']] ?? '<span class="status pending">⏳ در انتظار</span>' ?></div>
+                            <div><strong>وضعیت:</strong> 
+                                <?php 
+                                $status_labels = [
+                                    'pending' => 'در انتظار بررسی',
+                                    'in_progress' => 'در حال انجام',
+                                    'completed' => 'تکمیل شده',
+                                    'cancelled' => 'لغو شده',
+                                    'rejected' => 'رد شده'
+                                ];
+                                ?>
+                                <span class="status <?= htmlspecialchars($request['status']) ?>">
+                                    <?= $status_labels[$request['status']] ?? $request['status'] ?>
+                                </span>
+                            </div>
                         </div>
                     </div>
                     <div>
@@ -184,7 +197,7 @@ $page = "requests";
                 <?php endif; ?>
 
                 <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
-                    <a href="requests.php" class="btn btn-outline" style="text-decoration: none;">⬅️ بازگشت</a>
+                    <a href="<?= url('requests') ?>" class="btn btn-outline" style="text-decoration: none;">⬅️ بازگشت</a>
                     <?php if (in_array($request['status'], ['pending', 'in_progress'])): ?>
                         <a href="?cancel=<?= $request['id'] ?>" class="btn btn-outline" style="text-decoration: none; color: var(--danger); border-color: var(--danger);" onclick="return confirm('آیا از لغو این درخواست مطمئن هستید؟')">❌ لغو درخواست</a>
                     <?php endif; ?>

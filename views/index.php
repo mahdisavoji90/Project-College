@@ -275,7 +275,7 @@ try {
 
     <!-- محتوای اصلی برای تست -->
     <main style="flex:1; padding:40px 20px; text-align:center;">
-        <h1 style="color:#e0e0e0;">محتوای اصلی صفحه</h1>
+        <h1 style="color:#e0e0e0;"></h1>
         <p style="color:#666; margin-top:10px;">برای دیدن فوتر تیره به پایین اسکرول کنید</p>
     </main>
 

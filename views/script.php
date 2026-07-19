@@ -47,7 +47,8 @@ document.querySelectorAll('.menu-item').forEach(item => {
 // خروج از حساب
 sidebarLogout?.addEventListener('click', () => {
     if (confirm('آیا مطمئن هستید که می‌خواهید خارج شوید؟')) {
-        window.location.href = 'logout.php'; // یا هر مسیری که برای logout داری
+        window.location.href = 'logout';
+        window.location.href = '/baziaft234'; // یا هر مسیری که برای logout داری
     }
 });
 
@@ -56,7 +57,8 @@ sidebarLogout?.addEventListener('click', () => {
     let isLoggedIn = <?= isset($_SESSION['user_id']) ? 'true' : 'false' ?>;
     function logoutUser() {
     // فقط برای هماهنگی با دکمه خروج در هدر (اگر با AJAX می‌خواهید)
-    window.location.href = "logout.php";
+    window.location.href = "logout";
+    window.location.href = "/baziaft234";
 }
 document.getElementById("logoutBtn")?.addEventListener("click", logoutUser);
     // ---------- ذخیره‌سازی محلی ----------
