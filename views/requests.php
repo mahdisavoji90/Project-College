@@ -1,15 +1,7 @@
 <?php
 require_once(__DIR__ . "/../bootstrap.php");
 require_once __DIR__ . "/inc_db.php";
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
-// ============================================
-// شروع سشن
-// ============================================
-// ============================================
-// اتصال به دیتابیس
-// ============================================
 // ============================================
 // بررسی لاگین
 // ============================================
@@ -184,8 +176,8 @@ $page = "requests";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>درخواست‌های فروش - بازیافت نوین</title>
-</head>
+    <title>درخواست‌های فروش | بازیافت نوین</title>
+    </head>
 <body>
 
 <div class="dashboard-wrapper">

@@ -1,12 +1,8 @@
 <?php
 require_once(__DIR__ . "/../bootstrap.php");
 require_once __DIR__ . "/inc_db.php";
-// ============================================
-// شروع سشن
-// ============================================
-// ============================================
-// اتصال به دیتابیس
-// ============================================
+require_once(BASE_PATH . "/views/style.php");
+
 // ============================================
 // بررسی لاگین
 // ============================================
@@ -69,14 +65,14 @@ $estimated_price = ($request['weight'] ?? 0) * ($request['price_per_kg'] ?? 0);
 
 $page = "requests";
 ?>
+<?php require_once(BASE_PATH . "/views/style.php"); ?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جزئیات درخواست - بازیافت نوین</title>
-    <link rel="stylesheet" href="<?= url('views/style.php') ?>">
-</head>
+    <title>جزئیات درخواست | بازیافت نوین</title>
+    </head>
 <body>
 
 <div class="dashboard-wrapper">

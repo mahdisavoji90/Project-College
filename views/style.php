@@ -7,6 +7,321 @@
    ======================================== */
 
 /* وضعیت‌های جدید */
+/* ===== تنظیمات کلی هدر ===== */
+.container.header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding: 14px 28px;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.25);
+    gap: 14px;
+    border-bottom: 2px solid #22d3ee;
+}
+
+/* ===== کنترل‌های کاربر ===== */
+.controls-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-welcome {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.06);
+    padding: 5px 14px 5px 10px;
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.user-welcome span {
+    color: #cbd5e6;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    padding: 7px 18px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: none;
+}
+
+.btn-outline {
+    border: 1.5px solid #475569;
+    color: #94a3b8;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: #22d3ee;
+    color: #0f172a;
+    border-color: #22d3ee;
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: #22d3ee;
+    color: #0f172a;
+}
+
+.btn-primary:hover {
+    background: #06b6d4;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(34, 211, 238, 0.3);
+}
+
+/* ===== لوگو ===== */
+.logo {
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.logo h1 span {
+    color: #22d3ee;
+}
+
+.logo p {
+    font-size: 12px;
+    color: #64748b;
+    margin: 2px 0 0 0;
+    font-weight: 300;
+}
+
+/* ===== نوار جستجو ===== */
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex: 1 1 240px;
+    min-width: 180px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus-within {
+    border-color: #22d3ee;
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.08);
+    background: rgba(255,255,255,0.08);
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 9px 16px;
+    background: transparent;
+    border: none;
+    color: #e2e8f0;
+    font-size: 13px;
+    outline: none;
+    direction: rtl;
+}
+
+.search-bar input::placeholder {
+    color: #475569;
+    font-size: 12px;
+}
+
+.search-bar button {
+    padding: 9px 14px;
+    background: transparent;
+    border: none;
+    color: #64748b;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-bar button:hover {
+    color: #22d3ee;
+}
+
+/* ===== دسته‌بندی ===== */
+.quick-categories {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.quick-categories a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    transition: all 0.25s ease;
+    border: 1px solid transparent;
+}
+
+.quick-categories a:hover {
+    color: #ffffff;
+    border-color: rgba(34, 211, 238, 0.2);
+    background: rgba(34, 211, 238, 0.06);
+}
+
+/* ===== اکشن‌ها (سبد خرید + اعلان) ===== */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cart-icon,
+.notifications {
+    position: relative;
+    color: #94a3b8;
+    font-size: 20px;
+    padding: 7px 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: 1px solid transparent;
+}
+
+.cart-icon:hover,
+.notifications:hover {
+    color: #ffffff;
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.06);
+}
+
+.cart-count,
+.notif-count {
+    position: absolute;
+    top: -4px;
+    right: -2px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 50%;
+    min-width: 18px;
+    text-align: center;
+}
+
+.cart-count {
+    background: #22d3ee;
+    color: #0f172a;
+}
+
+.notif-count {
+    background: #f59e0b;
+    color: #0f172a;
+}
+
+/* ===== ریسپانسیو ===== */
+
+/* تبلت */
+@media (max-width: 1024px) {
+    .container.header-inner {
+        padding: 12px 20px;
+        gap: 10px;
+    }
+    
+    .logo h1 {
+        font-size: 22px;
+    }
+    
+    .quick-categories a {
+        font-size: 11px;
+        padding: 3px 10px;
+    }
+}
+
+/* موبایل */
+@media (max-width: 768px) {
+    .container.header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px 16px;
+        gap: 10px;
+    }
+    
+    .controls-wrapper {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .logo h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .logo p {
+        font-size: 11px;
+        text-align: center;
+    }
+    
+    .search-bar {
+        flex: 1 1 100%;
+    }
+    
+    .quick-categories {
+        justify-content: center;
+        gap: 4px;
+    }
+    
+    .quick-categories a {
+        font-size: 11px;
+        padding: 3px 10px;
+    }
+    
+    .actions {
+        justify-content: center;
+    }
+    
+    .user-welcome span {
+        font-size: 12px;
+    }
+    
+    .btn {
+        font-size: 12px;
+        padding: 6px 14px;
+    }
+}
+
+/* موبایل خیلی کوچک */
+@media (max-width: 480px) {
+    .container.header-inner {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+    
+    .logo h1 {
+        font-size: 17px;
+    }
+    
+    .quick-categories a {
+        font-size: 10px;
+        padding: 2px 8px;
+    }
+    
+    .cart-icon,
+    .notifications {
+        font-size: 17px;
+        padding: 5px 8px;
+    }
+}
 .status.in-progress {
     background: rgba(99, 102, 241, 0.15);
     color: #818cf8;

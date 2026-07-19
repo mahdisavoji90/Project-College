@@ -22,6 +22,8 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+ob_start();
+
 require_once BASE_PATH . '/app/Core/Database.php';
 
 use App\Core\Database;

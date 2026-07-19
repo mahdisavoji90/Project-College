@@ -94,24 +94,50 @@ if (isset($_SESSION['user_id'])) {
     <span></span>
 </button>
 
-    <div class="container header-inner">
-        <!-- دکمه ها اول می آیند -->
-        <div class="controls-wrapper">
-            <?php if (isset($_SESSION['user_id'])): ?>
-            <div class="user-welcome" id="userWelcomeArea" style="<?= isset($_SESSION['user_id']) ? 'display: block;' : 'display: none;' ?>">
-            <span style="color:#cbd5e6;">خوش آمدید، <?= htmlspecialchars($_SESSION['user_email']) ?></span>                <button class="btn btn-outline" id="logoutBtn" style="border-color:#64748b;">خروج</button>
-            </div>
-            <?php else: ?>
-                <div class="auth-buttons" id="authButtonsArea">
-                    <button class="btn btn-outline" id="loginNavBtn">ورود</button>
-                    <button class="btn btn-outline" id="registerNavBtn">ثبت‌نام</button>
-            </div>
-            <?php endif; ?>
+  <div class="container header-inner">
+    <!-- دکمه ها اول می آیند -->
+    <div class="controls-wrapper">
+        <?php if (isset($_SESSION['user_id'])): ?>
+        <div class="user-welcome" id="userWelcomeArea">
+            <span>خوش آمدید، <?= htmlspecialchars($_SESSION['user_email']) ?></span>
+            <button class="btn btn-outline" id="logoutBtn">خروج</button>
         </div>
-    <!-- لوگو بعد از آن می آید -->
+        <?php else: ?>
+            <div class="auth-buttons" id="authButtonsArea">
+                <button class="btn btn-outline" id="loginNavBtn">ورود</button>
+                <button class="btn btn-primary" id="registerNavBtn">ثبت‌نام</button>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <!-- لوگو -->
     <div class="logo">
         <h1>♻️ بازیافت نوین</h1>
         <p>خرید آنلاین ضایعات الکترونیک و فلزات</p>
+    </div>
+
+    <!-- نوار جستجو -->
+    <div class="search-bar">
+        <input type="text" placeholder="جستجوی محصولات..." id="searchInput">
+        <button id="searchBtn">🔍</button>
+    </div>
+
+    <!-- دسته‌بندی سریع -->
+    <div class="quick-categories">
+        <a href="#">الکترونیک</a>
+        <a href="#">فلزات</a>
+        <a href="#">پلاستیک</a>
+        <a href="#">کاغذ</a>
+    </div>
+
+    <!-- سبد خرید + اعلان -->
+    <div class="actions">
+        <div class="cart-icon">
+            🛒 <span class="cart-count">۳</span>
+        </div>
+        <div class="notifications">
+            🔔 <span class="notif-count">۵</span>
+        </div>
     </div>
 </div>
 
